@@ -106,7 +106,6 @@ function mainScript() {
             }
                 cardFilter();
                 removeFilterScript();
-                loading()
             })
     }
     let filterCountCount = 0;
@@ -146,13 +145,6 @@ function mainScript() {
             })
         }
     };
-    function loading() {
-        const selectedFilterUnit = document.querySelectorAll(".selected-filter-unit")
-
-        selectedFilterUnit.addEventListener("load", () => {
-
-        });
-    }
     function cardFilter() {
 
         for(let i=0;i<jobCardsArray.length;i++){
