@@ -204,6 +204,7 @@ button {
         background-image: url('../images/bg-header-desktop.svg');
     }
     .job-card {
+        height: 145.78px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -245,9 +246,29 @@ button {
     display: flex;
 }
 .hidden {
+    /* display: none; */
+    animation-name: hideAnimation;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    transition: ease;
+    overflow: hidden;
+    height: 0px;
+    padding: 0;
+}
+.hidden-final {
     display: none;
 }
 
 /* ANIMATIONS */
   
-  
+@keyframes hideAnimation {
+    0% {
+        height: 145.77px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0px;
+        opacity: 0;
+    }
+}

@@ -151,10 +151,11 @@ function mainScript() {
             if(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
                 console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
                 jobCard[i].classList.add('hidden')
-            }
-            if(selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
-                console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
-                jobCard[i].classList.add('slide-out-top')
+                setInterval(function(){
+                    jobCard[i].classList.add('hidden-final');
+                }, 400);
+                // let heightOfListItem = jobCard[1].clientHeight;
+                // console.log(heightOfListItem);
             }
         }
     };
