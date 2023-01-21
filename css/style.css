@@ -257,17 +257,24 @@ button {
     padding: 0;
     /* width: 0px; */
 }
-/* .active {
+.active {
     animation-name: hideAnimation;
     animation-duration: 0.5s;
     animation-direction: reverse;
     transition: ease-in-out;
     overflow: hidden;
-} */
+}
 /* .hidden-final {
     display: none;
 } */
-
+.active-filter {
+    animation: filterAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    transition: ease-in-out;
+    overflow: hidden;
+    padding: 0;
+}
 /* ANIMATIONS */
   
 @keyframes hideAnimation {
@@ -282,5 +289,20 @@ button {
         opacity: 0;
         margin-top: 0rem;
         height: 0px;
+    }
+}
+@keyframes filterAnimation {
+    0% {
+        /* transform: translateY(0px); */
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        margin-left: 0rem;
+    }
+    100% {
+        opacity: 1;
+        height: 28px;
+        width: 102px;
+        margin-left: 1rem;
     }
 }

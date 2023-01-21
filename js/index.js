@@ -150,8 +150,8 @@ function mainScript() {
         for(let i=0;i<jobCardsArray.length;i++){
             if(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
                 console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
+                jobCard[i].classList.remove('active')
                 jobCard[i].classList.add('hidden')
-                
                 // setTimeout(function(){
                 //     jobCard[i].classList.add('hidden-final');
                 // }, 500);
@@ -177,6 +177,7 @@ function mainScript() {
         for(let i=0;i<jobCard.length;i++){
             if(jobCard[i].classList.contains('hidden')) {
                 jobCard[i].classList.remove('hidden');
+                jobCard[i].classList.add('active')
             }
         }
         selectedFiltersArray = [];
