@@ -151,11 +151,10 @@ function mainScript() {
             if(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
                 console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
                 jobCard[i].classList.add('hidden')
-                setInterval(function(){
-                    jobCard[i].classList.add('hidden-final');
-                }, 400);
-                // let heightOfListItem = jobCard[1].clientHeight;
-                // console.log(heightOfListItem);
+                
+                // setTimeout(function(){
+                //     jobCard[i].classList.add('hidden-final');
+                // }, 500);
             }
         }
     };
@@ -165,6 +164,7 @@ function mainScript() {
             if(selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
                 console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
                 jobCard[i].classList.remove('hidden')
+                jobCard[i].classList.add('active')
             }
         }
     }
