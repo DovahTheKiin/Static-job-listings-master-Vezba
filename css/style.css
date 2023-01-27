@@ -162,7 +162,7 @@ button {
 .selected-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1rem; 
 }
 .selected-filter {
     justify-content: center;
@@ -249,7 +249,7 @@ button {
 .hidden {
     /* display: none; */
     animation-name: hideAnimation;
-    animation-duration: 0.5s;
+    animation-duration: 0.4s;
     animation-fill-mode: both;
     transition: ease-in-out;
     overflow: hidden;
@@ -258,23 +258,22 @@ button {
     /* width: 0px; */
 }
 .active {
-    animation-name: hideAnimation;
-    animation-duration: 0.5s;
-    animation-direction: reverse;
+    animation-name: showAnimation;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
     transition: ease-in-out;
     overflow: hidden;
 }
 /* .hidden-final {
     display: none;
 } */
-.active-filter {
-    animation: filterAnimation;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-    transition: ease-in-out;
+/* .active-filter {
+    animation-name: filterAnimation;
+    animation-duration: 0.4s;
     overflow: hidden;
-    padding: 0;
-}
+    transition: ease-in-out;
+    animation-fill-mode: both;
+} */
 /* ANIMATIONS */
   
 @keyframes hideAnimation {
@@ -296,13 +295,25 @@ button {
         /* transform: translateY(0px); */
         opacity: 0;
         height: 0px;
-        width: 0px;
-        margin-left: 0rem;
+        margin-right: 0rem;
     }
     100% {
         opacity: 1;
         height: 28px;
-        width: 102px;
-        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+@keyframes showAnimation {
+    0% {
+        /* transform: translateY(145.77px); */
+        opacity: 0;
+        margin-top: 0rem;
+        height: 0px;
+    }
+
+    100% {
+        /* transform: translateY(0px); */
+        opacity: 1;
+        height: 145.77px;
     }
 }

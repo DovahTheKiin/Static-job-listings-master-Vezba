@@ -77,7 +77,7 @@ function mainScript() {
             container.style.top = "-90px";
             selectedFilter = filtersDiv[i].innerHTML;
             filterOut = `
-            <div class="selected-filter-unit">
+            <div class="selected-filter-unit active-filter">
                 <p class="selected-filter">${selectedFilter}</p>
                 <button class="remove-filter"><img src="images/icon-remove.svg" alt="Remove icon"></button>
             </div>
@@ -163,8 +163,10 @@ function mainScript() {
         for(let i=0;i<jobCardsArray.length;i++){
             if(selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
                 console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
-                jobCard[i].classList.remove('hidden')
-                jobCard[i].classList.add('active')
+                if(jobCard[i].classList.contains('hidden')) {
+                    jobCard[i].classList.remove('hidden')
+                    jobCard[i].classList.add('active')
+                }
             }
         }
     }
