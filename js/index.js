@@ -69,7 +69,7 @@ function mainScript() {
 
     for(let i=0;i<filtersDiv.length;i++) {
         let selectedFilter;
-        let filterOut;
+        let filterOut = "";
         // let filterOutPlus = "";
         let clickCounter = 0;
         filtersDiv[i].addEventListener('click', () => {
@@ -77,19 +77,19 @@ function mainScript() {
             filterBox.classList.add('active-flex');
             container.style.top = "-90px";
             selectedFilter = filtersDiv[i].innerHTML;
-            filterOut = document.createElement('div');
-            filterOut.classList.add('selected-filter-unit');
-            filterOut.classList.add('active-filter');
-            filterOut.innerHTML = `
-            <p class="selected-filter">${selectedFilter}</p>
-                <button class="remove-filter"><img src="images/icon-remove.svg" alt="Remove icon"></button>
-            `;
-            // filterOutPlus = `
-            // <div class="selected-filter-unit active-filter">
-            //     <p class="selected-filter">${selectedFilter}</p>
+            // filterOut = document.createElement('div');
+            // filterOut.classList.add('selected-filter-unit');
+            // filterOut.classList.add('active-filter');
+            // filterOut.innerHTML = `
+            // <p class="selected-filter">${selectedFilter}</p>
             //     <button class="remove-filter"><img src="images/icon-remove.svg" alt="Remove icon"></button>
-            // </div>
             // `;
+            filterOut = `
+            <div class="selected-filter-unit active-filter">
+                <p class="selected-filter">${selectedFilter}</p>
+                <button class="remove-filter"><img src="images/icon-remove.svg" alt="Remove icon"></button>
+            </div>
+            `;
             if(selectedFiltersArray.includes(selectedFilter)) {
                 clickCounter = 1;
             }
@@ -98,8 +98,8 @@ function mainScript() {
                 selectedFiltersArray = [];
             }
             if(clickCounter === 0) {
-            // selectedFilters.innerHTML = selectedFilters.innerHTML + filterOut;
-            selectedFilters.appendChild(filterOut);
+            selectedFilters.innerHTML = selectedFilters.innerHTML + filterOut;
+            // selectedFilters.appendChild(filterOut);
             clickCounter = clickCounter + 1;
             selectedFiltersArray.push(selectedFilter);
             } else if (clickCounter > 0) {
@@ -108,8 +108,8 @@ function mainScript() {
                     if(selectedFilterParagraph[j].innerHTML === selectedFilter) {
                         return;
                     } else {
-                        // selectedFilters.innerHTML = selectedFilters.innerHTML + filterOut;
-                        selectedFilters.appendChild(filterOut);
+                        selectedFilters.innerHTML = selectedFilters.innerHTML + filterOut;
+                        // selectedFilters.appendChild(filterOut);
                         selectedFiltersArray.push(selectedFilter);
                     }
                 }
