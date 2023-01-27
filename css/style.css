@@ -162,7 +162,8 @@ button {
 .selected-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; 
+    /* gap: 1rem;  */
+    row-gap: 1rem;
 }
 .selected-filter {
     justify-content: center;
@@ -247,15 +248,12 @@ button {
     display: flex;
 }
 .hidden {
-    /* display: none; */
     animation-name: hideAnimation;
     animation-duration: 0.4s;
     animation-fill-mode: both;
     transition: ease-in-out;
     overflow: hidden;
-    /* height: 0px; */
     padding: 0;
-    /* width: 0px; */
 }
 .active {
     animation-name: showAnimation;
@@ -264,11 +262,15 @@ button {
     transition: ease-in-out;
     overflow: hidden;
 }
-/* .hidden-final {
-    display: none;
-} */
-/* .active-filter {
+.active-filter {
     animation-name: filterAnimation;
+    animation-duration: 0.2s;
+    overflow: hidden;
+    transition: ease-in-out;
+    animation-fill-mode: both;
+}
+/* .remove-filter {
+    animation-name: removeFilterAnimation;
     animation-duration: 0.4s;
     overflow: hidden;
     transition: ease-in-out;
@@ -278,42 +280,37 @@ button {
   
 @keyframes hideAnimation {
     0% {
-        /* transform: translateY(145.77px); */
         opacity: 1;
         height: 145.77px;
     }
 
     100% {
-        /* transform: translateY(0px); */
         opacity: 0;
         margin-top: 0rem;
         height: 0px;
-    }
-}
-@keyframes filterAnimation {
-    0% {
-        /* transform: translateY(0px); */
-        opacity: 0;
-        height: 0px;
-        margin-right: 0rem;
-    }
-    100% {
-        opacity: 1;
-        height: 28px;
-        margin-right: 1rem;
     }
 }
 @keyframes showAnimation {
     0% {
-        /* transform: translateY(145.77px); */
         opacity: 0;
         margin-top: 0rem;
         height: 0px;
     }
 
     100% {
-        /* transform: translateY(0px); */
         opacity: 1;
         height: 145.77px;
+    }
+}
+@keyframes filterAnimation {
+    0% {
+        opacity: 0;
+        /* height: 0px; */
+        margin-right: 0rem;
+    }
+    100% {
+        opacity: 1;
+        /* height: 28px; */
+        margin-right: 1rem;
     }
 }
