@@ -157,6 +157,20 @@ function mainScript() {
     };
     function cardFilter() {
 
+        // let rootElement = getComputedStyle(document.body);
+        // console.log("Element:" + rootElement);
+        // function getRootValue(){
+        //     let elementHeight;
+        //     elementHeight = jobCard[2].clientHeight;
+        //     let elementHeightString = elementHeight.toString();
+        //     console.log("Height is" + elementHeight);
+        //     let rootValue = rootElement.getPropertyValue('--element-height');
+        //     console.log("Value:" + rootValue);
+        //     document.body.style.setProperty('--element-height', elementHeightString +"px");
+        //     console.log("new value: " + rootElement.getPropertyValue('--element-height'))
+        // };
+        // getRootValue(); 
+
         for(let i=0;i<jobCardsArray.length;i++){
             if(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val))){
                 console.log(!selectedFiltersArray.every(val => jobCardsArray[i].includes(val)))
