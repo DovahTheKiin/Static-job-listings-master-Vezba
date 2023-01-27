@@ -136,8 +136,8 @@ function mainScript() {
         const selectedFilterParagraph = document.querySelectorAll(".selected-filter")
 
         for(let i=0;i<removeFilter.length;i++) {
-            removeFilter[i].addEventListener('click', () => {
-                selectedFilters.removeChild(selectedFilterUnit[i]);
+            removeFilter[i].addEventListener('click', ({currentTarget}) => {
+                currentTarget.closest('div').remove();
                 console.log(removeFilter);
                 if(selectedFilters.childElementCount == 0) {
                     filterBox.classList.remove('active-flex');

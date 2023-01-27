@@ -10,7 +10,6 @@
     --neutral-shadow-cyan-400: hsl(180, 52%, 90%);
     --neutral-border-cyan-700:hsl(180, 8%, 82%);
 
-    --element-height: 145.77px;
 }
 *, *::after, *::before {
     box-sizing: border-box;
